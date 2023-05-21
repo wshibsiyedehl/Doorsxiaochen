@@ -1,4 +1,4 @@
-game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "陈"; Text ="Doors"; Duration = 10; })
+game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "陈-人机玩Doors还玩挂"; Text ="Doors"; Duration = 10; })
 
 local OrionLib = loadstring(game:HttpGet('https://pastebin.com/raw/xLRUSiKx'))()
 
@@ -11552,14 +11552,6 @@ Tab:AddButton({
 
 local Tab = Window:MakeTab({
 
-	Name = "信息与其他",	Icon = "rbxassetid://10483855823",
-
-	PremiumOnly = false
-
-})
-
-local Tab = Window:MakeTab({
-
 	Name = "Doors玩家功能",	Icon = "rbxassetid://11372950109",
 
 	PremiumOnly = false
@@ -11667,6 +11659,14 @@ Tab:AddButton({
      loadstring(game:HttpGet('https://pastebin.com/raw/CbRsLfts'))() 
 
 	end
+
+})
+
+local Tab = Window:MakeTab({
+
+	Name = "信息与其他",	Icon = "rbxassetid://10483855823",
+
+	PremiumOnly = false
 
 })
 
