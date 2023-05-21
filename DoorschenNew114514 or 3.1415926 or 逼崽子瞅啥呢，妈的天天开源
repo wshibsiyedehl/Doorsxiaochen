@@ -11540,6 +11540,40 @@ Tab:AddButton({
 
 Tab:AddButton({
 
+	Name = "冰淇淋",	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/wshibsiyedehl/wuphuoq/main/%E5%86%B0%E6%B7%87%E6%B7%8B"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "气球",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/wshibsiyedehl/wuphuoq/main/%E6%B0%94%E7%90%83"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "汉堡",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/wshibsiyedehl/wuphuoq/main/%E6%B1%89%E5%A0%A1"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
 	Name = "十字架（可封印）",
 
     Callback = function()
