@@ -11867,6 +11867,172 @@ Tab:AddButton({
 
 local Tab = Window:MakeTab({
 
+	Name = "UI与实体",	Icon = "rbxassetid://4483345998",
+
+	PremiumOnly = false
+
+})
+
+local Section = Tab:AddSection({
+
+	Name = "UI不是真的"
+
+})
+
+local EnabledEntities={
+
+    EnabledScreech=false,
+
+    EnabledHalt=false,
+
+    EnabledGlitch=false,
+
+}
+
+Tab:AddToggle({
+
+    Name = "无视 Screech",
+
+	CurrentValue = false,
+
+	Flag = "IgnoreScreech",
+
+	Callback = function(Value)
+
+        EnabledEntities.EnabledScreech = Value
+
+	end,
+
+})
+
+Tab:AddToggle({
+
+    Name = "无视 Glitch",
+
+	CurrentValue = false,
+
+	Flag = "IgnoreGlitch",
+
+	Callback = function(Value)
+
+        EnabledEntities.EnabledGlitch = Value
+
+	end,
+
+})
+
+Tab:AddToggle({
+
+    Name = "无视 Halt",
+
+	CurrentValue = false,	Flag = "IgnoreHalt",
+
+	Callback = function(Value)
+
+        EnabledEntities.EnabledHalt = Value
+
+	end,
+
+})
+
+workspace.Camera.ChildAdded:Connect(function(c)
+
+    if c.Name == "Screech" then
+
+        wait(0.1)
+
+        if EnabledEntities.EnabledScreech then
+
+            removeDebris(c, 0)
+
+        end
+
+    end
+
+    if c.Name == "Shade" then
+
+        wait(.1)
+
+        if EnabledEntities.EnabledHalt then
+
+            removeDebris(c, 0)
+
+        end
+
+    end
+
+end)
+
+workspace.CurrentRooms.ChildAdded:Connect(function()
+
+    if EnabledEntities.EnabledGlitch then
+
+        local currentRoom=game.Players.LocalPlayer:GetAttribute("CurrentRoom")
+
+        local roomAmt=#workspace.CurrentRooms:GetChildren()
+
+        local lastRoom=game.ReplicatedStorage.GameData.LatestRoom.Value
+
+    
+
+        if roomAmt>=4 and currentRoom<lastRoom-3 then
+
+            game.Players.LocalPlayer.Character:PivotTo(CFrame.new(lastRoom.RoomStart.Position))
+
+        end    
+
+    end
+
+end)
+
+Tab:AddTextbox({
+
+	Name = "设置金币数量",	PlaceholderText = game.Players.LocalPlayer.PlayerGui.PermUI.Topbar.Knobs.Text,
+
+	RemoveTextAfterFocusLost = false,
+
+	Callback = function(Text)
+
+        require(game.ReplicatedStorage.ReplicaDataModule).event.Knobs:Fire(tonumber(Text))
+
+	end,
+
+})
+
+Tab:AddTextbox({
+
+	Name = "设置复活数量",
+
+	PlaceholderText = game.Players.LocalPlayer.PlayerGui.PermUI.Topbar.Revives.Text,
+
+	RemoveTextAfterFocusLost = false,
+
+	Callback = function(Text)
+
+        require(game.ReplicatedStorage.ReplicaDataModule).event.Revives:Fire(tonumber(Text))
+
+	end,
+
+})
+
+Tab:AddTextbox({
+
+	Name = "设置加成数量（金币加成）",
+
+	PlaceholderText = game.Players.LocalPlayer.PlayerGui.PermUI.Topbar.Boosts.Text,
+
+	RemoveTextAfterFocusLost = false,
+
+	Callback = function(Text)
+
+        require(game.ReplicatedStorage.ReplicaDataModule).event.Boosts:Fire(tonumber(Text))
+
+	end,
+
+})
+
+local Tab = Window:MakeTab({
+
 	Name = "信息与其他",	Icon = "rbxassetid://10483855823",
 
 	PremiumOnly = false
