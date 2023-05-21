@@ -11516,6 +11516,18 @@ Tab:AddButton({
 
 Tab:AddButton({
 
+    Name = "枪",
+
+    Callback = function ()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/ZepsyyCodesLUA/Utilities/main/DOORSFpsGun.lua?token=GHSAT0AAAAAAB2POHILOXMAHBQ2GN2QD2MQY3SXTCQ"))() 
+
+        end
+
+})
+
+Tab:AddButton({
+
 	Name = "手电筒",
 
 	Callback = function()
