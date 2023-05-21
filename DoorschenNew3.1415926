@@ -11838,7 +11838,7 @@ old = hookmetamethod(game,"__namecall",newcclosure(function(self,...)
 
 end))
 
-4workspace.CurrentCamera.ChildAdded:Connect(function(child)
+workspace.CurrentCamera.ChildAdded:Connect(function(child)
 
     if child.Name == "Screech" and OrionLib.Flags["ScreechToggle"].Value == true then
 
