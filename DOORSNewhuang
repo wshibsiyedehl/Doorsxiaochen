@@ -11400,6 +11400,146 @@ Tab:AddButton({
 
 local Tab = Window:MakeTab({
 
+	Name = "十字与其他",	Icon = "rbxassetid://7734068321",
+
+	PremiumOnly = false
+
+})
+
+Tab:AddLabel("十字架：") 
+
+Tab:AddButton({
+
+	Name = "乱码十字架",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/PiotrekMineRoblox/Bumble-crucifix/main/Bumble-crucifix"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "万圣节十字架",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Mye123/MyeWareHub/main/Halloween%20Crucifix"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "圣诞节十字架",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/PiotrekMineRoblox/Christmas-Crucifix/main/Christmas%20crucifix.lua"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "Figure十字架",	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/BaconBloxYT/ok/main/Okay"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "剪刀",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/MrNeRD0/Doors-Hack/main/shears_done.lua"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "骷髅钥匙",
+
+	Callback = function()
+
+     local item = game:GetObjects("rbxassetid://11697889137")[1]item.Parent = game.Players.LocalPlayer.Backpack
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "十字架",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/cbhlyy/lyycbh/main/shizizhen"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "吸铁石",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/MrNeRD0/Doors-Hack/main/MagnetByNerd.lua"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "激光枪",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/K0t1n/Public/main/Laser%20Gun"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "手电筒",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/K0t1n/Public/main/Normal%20Flashlight"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "十字架（可封印）",
+
+    Callback = function()
+
+     loadstring(game:HttpGet('https://gist.githubusercontent.com/C00LBOZO/0c78ad8c74ca26324c87ede16ce8b387/raw/c0887ac0d24fde80bea11ab1a6a696ec296af272/Crucifix'))()
+
+    end
+
+})
+
+local Tab = Window:MakeTab({
+
 	Name = "信息与其他",	Icon = "rbxassetid://10483855823",
 
 	PremiumOnly = false
