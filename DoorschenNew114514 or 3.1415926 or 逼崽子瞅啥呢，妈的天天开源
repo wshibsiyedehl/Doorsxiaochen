@@ -1,8 +1,8 @@
-game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "陈-人机玩Doors还玩挂"; Text ="Doors"; Duration = 10; })
+game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "陈-人机玩Doors还要瓜"; Text ="Doors"; Duration = 10; })
 
 local OrionLib = loadstring(game:HttpGet('https://pastebin.com/raw/xLRUSiKx'))()
 
-local Window = OrionLib:MakeWindow({Name = "陈-人机玩Doors还要挂", HidePremium = false, SaveConfig = true,IntroText = "陈-Doors", ConfigFolder = "Doors"})
+local Window = OrionLib:MakeWindow({Name = "陈-人机玩Doors还要瓜", HidePremium = false, SaveConfig = true,IntroText = "陈-Doors", ConfigFolder = "Doors"})
 
 game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "欢迎使用"; Text ="1.0"; Duration = 10; })
 
