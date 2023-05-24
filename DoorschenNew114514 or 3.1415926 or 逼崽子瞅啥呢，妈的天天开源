@@ -11981,6 +11981,19 @@ Tab:AddToggle({
 
 })
 
+Tab:AddToggle({
+
+	Name = "房间刷新时/自动躲避Rush Ambush",    Callback = function ()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/BaFjFuCk"))()
+
+Tab:AddToggle({
+
+	Name = "预测Seek/心跳不输/无screech/即刻/无火/互动",
+
+    Callback = function ()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/kXanyBLY"))()
 game:GetService("RunService").RenderStepped:Connect(function()
 
     pcall(function()
