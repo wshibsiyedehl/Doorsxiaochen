@@ -11875,117 +11875,13 @@ local Tab = Window:MakeTab({
 
 Tab:AddToggle({
 
-	Name = "头灯",	Default = false,
+	Name = "房间刷新时/自动躲避Rush Ambush",    Callback = function ()
 
-    Callback = function(Value)
-
-        pcl.Enabled = Value
-
-    end
-
-})
-
-Tab:AddToggle({
-
-	Name = "Seek没有火",
-
-	Default = false,
-
-    Flag = "NoSeek",
-
-    Save = true
-
-})
-
-Tab:AddToggle({
-
-	Name = "瞬间互动",
-
-	Default = false,
-
-    Flag = "InstantToggle",
-
-    Save = true
-
-})
-
-Tab:AddButton({
-
-	Name = "无贴脸",	Callback = function()
-
-        pcall(function()
-
-            game:GetService("ReplicatedStorage").Bricks.Jumpscare:Destroy()
-
-        end)
+     loadstring(game:HttpGet("https://pastebin.com/raw/BaFjFuCk"))()
 
   	end    
 
 })
-
-Tab:AddToggle({
-
-	Name = "自动躲避Rush/Ambush",
-
-	Default = false,
-
-    Flag = "AvoidRushToggle",
-
-    Save = true
-
-})
-
-Tab:AddToggle({
-
-	Name = "没有尖叫(实体)",
-
-	Default = false,
-
-    Flag = "ScreechToggle",
-
-    Save = true
-
-})
-
-Tab:AddToggle({
-
-	Name = "没心跳",	Default = false,
-
-    Flag = "HeartbeatWin",
-
-    Save = true
-
-})
-
-Tab:AddToggle({
-
-	Name = "预测追逐战",
-
-	Default = false,
-
-    Flag = "PredictToggle" ,
-
-    Save = true
-
-})
-
-Tab:AddToggle({
-
-	Name = "刷新怪物时通知",
-
-	Default = false,
-
-    Flag = "MobToggle" ,
-
-    Save = true
-
-})
-
-Tab:AddToggle({
-
-	Name = "房间刷新时/自动躲避Rush Ambush",    Callback = function ()
-
-     loadstring(game:HttpGet("https://pastebin.com/raw/BaFjFuCk"))()
 
 Tab:AddToggle({
 
@@ -11994,228 +11890,22 @@ Tab:AddToggle({
     Callback = function ()
 
      loadstring(game:HttpGet("https://pastebin.com/raw/kXanyBLY"))()
-game:GetService("RunService").RenderStepped:Connect(function()
 
-    pcall(function()
+  	end    
 
-        if game.Players.LocalPlayer.Character.Humanoid.MoveDirection.Magnitude > 0 then
+})
 
-            game.Players.LocalPlayer.Character:TranslateBy(game.Players.LocalPlayer.Character.Humanoid.MoveDirection * TargetWalkspeed/50)
+Tab:AddButton({
 
-        end
+	Name = "完成断路器盒子",
 
-    end)
+	Callback = function()
 
-end)
+        game:GetService("ReplicatedStorage").Bricks.EBF:FireServer()
 
-game:GetService("Workspace").CurrentRooms.DescendantAdded:Connect(function(descendant)
+  	end    
 
-    if OrionLib.Flags["NoSeek"].Value == true and descendant.Name == ("Seek_Arm" or "ChandelierObstruction") then
-
-        task.spawn(function()
-
-            wait()
-
-            descendant:Destroy()
-
-        end)
-
-    end
-
-end)
-
-game:GetService("ProximityPromptService").PromptButtonHoldBegan:Connect(function(prompt)
-
-    if OrionLib.Flags["InstantToggle"].Value == true then
-
-        fireproximityprompt(prompt)
-
-    end
-
-end)
-
-local old
-
-old = hookmetamethod(game,"__namecall",newcclosure(function(self,...)
-
-    local args = {...}
-
-    local method = getnamecallmethod()
-
-    
-
-    if tostring(self) == 'Screech' and method == "FireServer" and OrionLib.Flags["ScreechToggle"].Value == true then
-
-        args[1] = true
-
-        return old(self,unpack(args))
-
-    end
-
-    if tostring(self) == 'ClutchHeartbeat' and method == "FireServer" and OrionLib.Flags["HeartbeatWin"].Value == true then
-
-        args[2] = true
-
-        return old(self,unpack(args))
-
-    end
-
-    
-
-    return old(self,...)
-
-end))
-
-workspace.CurrentCamera.ChildAdded:Connect(function(child)
-
-    if child.Name == "Screech" and OrionLib.Flags["ScreechToggle"].Value == true then
-
-        child:Destroy()
-
-    end
-
-end)
-
-local NotificationCoroutine = coroutine.create(function()
-
-    LatestRoom.Changed:Connect(function()
-
-        if OrionLib.Flags["PredictToggle"].Value == true then
-
-            local n = ChaseStart.Value - LatestRoom.Value
-
-            if 0 < n and n < 4 then
-
-                OrionLib:MakeNotification({
-
-                    Name = "陈",
-
-                    Content = "还有" .. tostring(n) .. "房间刷新怪",
-
-                    Time = 5
-
-                })
-
-            end
-
-        end
-        if OrionLib.Flags["BookToggle"].Value == true then
-
-            if LatestRoom.Value == 50 then
-
-                coroutine.resume(BookCoroutine)
-
-            end
-
-        end
-
-        if OrionLib.Flags["FigureToggle"].Value == true then
-
-            if LatestRoom.Value == 50 then
-
-                coroutine.resume(EntityCoroutine)
-
-            end
-
-        end
-
-    end)
-
-    workspace.ChildAdded:Connect(function(inst)
-
-        if inst.Name == "RushMoving" and OrionLib.Flags["MobToggle"].Value == true then
-
-            if OrionLib.Flags["AvoidRushToggle"].Value == true then
-
-                OrionLib:MakeNotification({
-
-                    Name = "陈",
-
-                    Content = "躲避Rush请稍等",
-
-                    Time = 5
-
-                })
-
-                local OldPos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
-
-                local con = game:GetService("RunService").Heartbeat:Connect(function()
-
-                    game.Players.LocalPlayer.Character:MoveTo(OldPos + Vector3.new(0,20,0))
-
-                end)
-
-                
-
-                inst.Destroying:Wait()
-
-                con:Disconnect()
-                
-                game.Players.LocalPlayer.Character:MoveTo(OldPos)
-
-            else
-
-                OrionLib:MakeNotification({
-
-                    Name = "陈",
-
-                    Content = "RUsh已刷新",
-
-                    Time = 5
-
-                })
-
-            end
-
-        elseif inst.Name == "AmbushMoving" and OrionLib.Flags["MobToggle"].Value == true then
-
-            if OrionLib.Flags["AvoidRushToggle"].Value == true then
-
-                OrionLib:MakeNotification({
-
-                    Name = "陈",
-
-                    Content = "躲避Ruah请稍等",
-
-                    Time = 5
-
-                })
-
-                local OldPos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
-
-                local con = game:GetService("RunService").Heartbeat:Connect(function()
-
-                    game.Players.LocalPlayer.Character:MoveTo(OldPos + Vector3.new(0,20,0))
-
-                end)
-                
-                inst.Destroying:Wait()
-
-                con:Disconnect()
-
-                
-
-                game.Players.LocalPlayer.Character:MoveTo(OldPos)
-
-            else
-
-                OrionLib:MakeNotification({
-
-                    Name = "陈",
-
-                    Content = "Ambush刷新",
-
-                    Time = 5
-
-                })
-
-            end
-
-        end
-
-    end)
-
-end)
+})
 
 local Tab = Window:MakeTab({
 
