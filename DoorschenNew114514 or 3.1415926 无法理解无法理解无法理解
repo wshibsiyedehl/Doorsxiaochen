@@ -11484,7 +11484,9 @@ Tab:AddButton({
 
 	Callback = function()
 
-     
+     local exampleTool = game:GetObjects("rbxassetid://11712848097")[1]
+
+exampleTool.Parent = game.Players.LocalPlayer.Backpack
 
 	end
 
@@ -11554,7 +11556,8 @@ Tab:AddButton({
 
 	Callback = function()
 
-     loadstring(game:HttpGet("https://raw.githubusercontent.com/wshibsiyedehl/wuphuoq/main/%E6%B0%94%E7%90%83"))()
+      loadstring(game:HttpGet('https://raw.githubusercontent.com/wshibsiyedehl/wuphuoq/main/%E6%B0%94%E7%90%83%E5%91%80'))()
+    
 
 	end
 
@@ -11566,7 +11569,7 @@ Tab:AddButton({
 
 	Callback = function()
 
-     loadstring(game:HttpGet("https://raw.githubusercontent.com/wshibsiyedehl/wuphuoq/main/%E6%B1%89%E5%A0%A1"))()
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/wshibsiyedehl/wuphuoq/main/%E6%B0%94%E7%90%83%E5%91%80"))()
 
 	end
 
