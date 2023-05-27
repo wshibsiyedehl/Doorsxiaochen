@@ -11480,11 +11480,11 @@ Tab:AddButton({
 
 Tab:AddButton({
 
-	Name = "十字架",
+	Name = "十字架（模型）",
 
 	Callback = function()
 
-     loadstring(game:HttpGet("https://raw.githubusercontent.com/cbhlyy/lyycbh/main/shizizhen"))()
+     
 
 	end
 
@@ -11516,11 +11516,11 @@ Tab:AddButton({
 
 Tab:AddButton({
 
-    Name = "枪",
+    Name = "枪（已修复）",
 
     Callback = function ()
 
-     loadstring(game:HttpGet("https://raw.githubusercontent.com/ZepsyyCodesLUA/Utilities/main/DOORSFpsGun.lua?token=GHSAT0AAAAAAB2POHILOXMAHBQ2GN2QD2MQY3SXTCQ"))() 
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/ZepsyyCodesLUA/Utilities/main/DOORSFpsGun.lua"))() 
 
         end
 
@@ -11574,7 +11574,7 @@ Tab:AddButton({
 
 Tab:AddButton({
 
-	Name = "十字架（可封印）",
+	Name = "十字架（已修复特效）",
 
     Callback = function()
 
