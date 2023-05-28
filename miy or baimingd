@@ -216,6 +216,28 @@ function yhm4()
 
 end
 
+function yhm5()
+
+  if playername == "jdjdiejdhkefh" then
+
+    if Input == "www" then
+
+      load()
+
+     else
+
+      wrong()
+
+    end
+
+   else
+
+    yhm6()
+
+  end
+
+end
+
 --验证区
 
 Key:AddParagraph("陈脚本永久免费","")
