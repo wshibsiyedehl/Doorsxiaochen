@@ -11446,6 +11446,28 @@ Tab:AddButton({
 
 Tab:AddButton({
 
+	Name = "十字架（类型1）",	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/PiotrekMineRoblox/Bumble-crucifix/main/Bumble-crucifix"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "十字架（类型2）",	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Mye123/MyeWareHub/main/Halloween%20Crucifix"))()
+
+    print("一个神奇的十字架")
+
+	end
+
+})
+
+Tab:AddButton({
+
 	Name = "Figure十字架",	Callback = function()
 
      loadstring(game:HttpGet("https://raw.githubusercontent.com/BaconBloxYT/ok/main/Okay"))()
