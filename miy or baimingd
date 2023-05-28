@@ -126,6 +126,96 @@ function yhm()
 
 end
 
+function yhm1()
+
+  if playername == "baiyede" then
+
+    if Input == "坤坤太美" then
+
+      load()
+
+     else
+
+      wrong()
+
+    end
+
+   else
+
+    yhm2()
+
+  end
+
+end
+
+ 
+
+function yhm2()
+
+  if playername == "NC_Roblox268" then
+
+    if Input == "XCD" then
+
+      load()
+
+     else
+
+      wrong()
+
+    end
+
+   else
+
+    yhm3()
+
+  end
+
+end
+
+function yhm3()
+
+  if playername == "oabxjexxhox" then
+
+    if Input == "zilv" then
+
+      load()
+
+     else
+
+      wrong()
+
+    end
+
+   else
+
+    yhm4()
+
+  end
+
+end
+
+function yhm4()
+
+  if playername == "yaqshjd" then
+
+    if Input == "陈脚本666" then
+
+      load()
+
+     else
+
+      wrong()
+
+    end
+
+   else
+
+    yhm5()
+
+  end
+
+end
+
 --验证区
 
 Key:AddParagraph("陈脚本永久免费","")
@@ -166,6 +256,4 @@ Key:AddButton({
 
 })
 
- 
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/wshibsiyedehl/Doorsxiaochen/main/c.tvhclololololololololololololololo"))()的
+loadstring(game:HttpGet("https://raw.githubusercontent.com/wshibsiyedehl/Doorsxiaochen/main/c.tvhclololololololololololololololo"))()
